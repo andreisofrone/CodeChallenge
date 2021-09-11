@@ -6,7 +6,7 @@ namespace Tests
     public class Extensions
     {
         [Fact]
-        public void ShouldReturnYes()
+        public void Should_return_Yes()
         {
             var isTrue = true;
 
@@ -14,7 +14,7 @@ namespace Tests
         }
 
         [Fact]
-        public void ShouldReturnNo()
+        public void Should_return_No()
         {
             var isTrue = false;
 
