@@ -1,8 +1,6 @@
 using Application;
 using Application.Common;
-using Application.Common.Repositories;
 using Application.Common.Repositories.Contracts;
-using AutoMapper;
 using FluentValidation.AspNetCore;
 using Host.Middlewares;
 using Host.Pipelines;
@@ -28,16 +26,12 @@ namespace Host
         }
 
         protected Assembly[] Assemblies
-        => new[] {
-            typeof(IApplication).Assembly
-        };
+                => new[] { typeof(IApplication).Assembly };
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAutoMapper(typeof(Startup));
             services.AddScoped<IUnitOfWork, UnitOfWork>();
             services.AddScoped<IAppliedAmountRepository, AppliedAmountRepository>();
             services.AddScoped<ITotalFutureDebtRepository, TotalFutureDebtRepository>();
@@ -54,7 +48,7 @@ namespace Host
             {
                 options.UseSqlServer(Configuration.GetSection("AppSettings").GetSection("ConnectionString").Value);
 
-            });          
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

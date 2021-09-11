@@ -12,7 +12,7 @@ DELETE FROM TotalFutureDebts
 GO
 
 INSERT INTO AppliedAmounts([LowerBound], [UpperBound], [Decision])
-VALUES(0, 2000, 0), (2000, 69000, 1), (69000, 1000000000, 0)
+VALUES(1, 2000, 0), (2000, 69000, 1), (69000, 1000000000, 0)
 
 INSERT INTO TotalFutureDebts([LowerBound], [UpperBound], [InterestRate])
-VALUES(0, 20000, 3), (20000, 39000, 4), (40000, 59000, 5), (60000, 1000000000, 6)
+VALUES(1, 20000, 3), (20000, 39000, 4), (40000, 59000, 5), (60000, 1000000000, 6)
