@@ -2,7 +2,7 @@
 {
     public class SolutionDto
     {
-        public bool Decision { get; set; }
+        public string Decision { get; set; }
 
         public int InterestRate { get; set; }
     }

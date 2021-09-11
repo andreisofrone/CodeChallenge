@@ -6,10 +6,10 @@ namespace Application.DBExercise.Messages.Commands
     public class ApplyForCreditCommand
         : IRequest<SolutionDto>
     {
-        public int CreditAmount { get; set; }
+        public long CreditAmount { get; set; }
 
-        public int Term { get; set; }
+        public long Term { get; set; }
 
-        public int CurrentCreditAmount { get; set; }
+        public long CurrentPreExistingCreditAmount { get; set; }
     }
 }

@@ -7,21 +7,21 @@ namespace Infrastructure.Context
     public class UnitOfWork
         : IUnitOfWork
     {
-        private readonly AppDbContext _context;
+        private readonly AppDbContext context;
 
         public UnitOfWork(AppDbContext context)
         {
-            _context = context;
+            this.context = context;
         }
 
         public async Task CompleteAsync()
         {
-            await _context.SaveChangesAsync();
+            await context.SaveChangesAsync();
         }
 
         public async Task CompleteAsync(CancellationToken token)
         {
-            await _context.SaveChangesAsync(token);
+            await context.SaveChangesAsync(token);
         }
     }
 }

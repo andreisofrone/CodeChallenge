@@ -8,7 +8,7 @@ namespace Infrastructure.Context
     public class AppDbContext
        : DbContext
     {
-        private AppSettings _configuration { get; }
+        private AppSettings configuration { get; }
 
         public AppDbContext()
         {
@@ -17,14 +17,14 @@ namespace Infrastructure.Context
         public AppDbContext(DbContextOptions<AppDbContext> options, IOptions<AppSettings> configuration)
             : base(options)
         {
-            _configuration = configuration?.Value;
+            this.configuration = configuration?.Value;
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(_configuration.ConnectionString);
+                optionsBuilder.UseSqlServer(configuration.ConnectionString);
             }
         }
 
