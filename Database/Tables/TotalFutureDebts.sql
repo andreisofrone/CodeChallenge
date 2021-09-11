@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[TotalFutureDebt]
+﻿CREATE TABLE [dbo].[TotalFutureDebts]
 (
 	[Id] BIGINT NOT NULL IDENTITY(1,1), 
     [LowerBound] BIGINT NOT NULL, 

@@ -1,4 +1,4 @@
-﻿CREATE TABLE [dbo].[AppliedAmount]
+﻿CREATE TABLE [dbo].[AppliedAmounts]
 (
 	[Id] BIGINT NOT NULL IDENTITY(1,1), 
     [LowerBound] BIGINT NOT NULL, 

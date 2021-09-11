@@ -1,22 +1,31 @@
+using Application.Common.Repositories;
+using Microsoft.AspNetCore;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
 namespace Host
 {
-    using Host = Microsoft.Extensions.Hosting.Host;
-
     public class Program
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var host = BuildWebHost(args);
+
+            using (var scope = host.Services.CreateScope())
+            using (var context = scope.ServiceProvider.GetService<AppDbContext>())
+            {
+                context.Database.EnsureCreated();
+            }
+
+            host.Run();
         }
 
-        public static IHostBuilder CreateHostBuilder(string[] args) =>
-            Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
-                {
-                    webBuilder.UseStartup<Startup>();
-                });
+        public static IWebHost BuildWebHost(string[] args)
+        {
+            return WebHost.CreateDefaultBuilder(args)
+                          .UseStartup<Startup>()
+                          .Build();
+        }
     }
 }
