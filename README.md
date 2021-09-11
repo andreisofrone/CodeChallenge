@@ -1,3 +1,3 @@
 # CodeChallenge
 
-Please Publish the DataBase project before using the application.
+ !! Please PUBLISH the database project before using the application.
