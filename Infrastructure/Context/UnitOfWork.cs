@@ -2,7 +2,7 @@
 using System.Threading;
 using System.Threading.Tasks;
 
-namespace Application.Common.Repositories
+namespace Infrastructure.Context
 {
     public class UnitOfWork
         : IUnitOfWork

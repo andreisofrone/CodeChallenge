@@ -6,6 +6,7 @@ using AutoMapper;
 using FluentValidation.AspNetCore;
 using Host.Middlewares;
 using Host.Pipelines;
+using Infrastructure.Context;
 using Infrastructure.DBExercise.Storage;
 using MediatR;
 using Microsoft.AspNetCore.Builder;
@@ -42,8 +43,6 @@ namespace Host
             services.AddScoped<ITotalFutureDebtRepository, TotalFutureDebtRepository>();
             services.AddOptions();
             services.AddMediatR(Assemblies);
-
-            //var domainAssembly = typeof(IApplication).GetTypeInfo().Assembly;
             services.AddFluentValidation(Assemblies);
 
             services.AddMvc()

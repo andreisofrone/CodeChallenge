@@ -1,6 +1,6 @@
 ﻿using Application.Common.Models;
-using Application.Common.Repositories;
 using Application.Common.Repositories.Contracts;
+using Infrastructure.Context;
 
 namespace Infrastructure.DBExercise.Storage
 {

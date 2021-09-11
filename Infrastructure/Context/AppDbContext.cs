@@ -1,8 +1,9 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using Application;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
 using System.Reflection;
 
-namespace Application.Common.Repositories
+namespace Infrastructure.Context
 {
     public class AppDbContext
        : DbContext

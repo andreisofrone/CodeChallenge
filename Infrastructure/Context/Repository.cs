@@ -2,7 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace Application.Common.Repositories
+namespace Infrastructure.Context
 {
     public abstract class Repository<T>
        : IRepository<T> where T : class

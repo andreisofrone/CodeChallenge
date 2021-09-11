@@ -9,7 +9,7 @@ namespace Infrastructure.Context.Configurations
     {
         public void Configure(EntityTypeBuilder<AppliedAmount> builder)
         {
-            builder.ToTable("TotalFutureDebts");
+            builder.ToTable("AppliedAmounts");
 
             builder.HasKey(c => c.Id);
 
